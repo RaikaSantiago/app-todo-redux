@@ -1,0 +1,12 @@
+<footer class="footer">
+    <!-- This should be `0 items left` by default -->
+    <span class="todo-count"><strong>{{pendientes}}</strong> TP</span>
+    <!-- Remove this if you don't implement routing -->
+    <ul class="filters" style="margin-right: 5px;">
+        <li *ngFor="let filtro of arrFiltros">
+            <a [class.selected]="filtro === filtroActual" (click)="cambiarFiltro(filtro)" >{{filtro | titlecase }}</a>
+        </li>
+    </ul>
+    <!-- Hidden if no completed items are left ↓ -->
+    <button class="clear-completed" (click)="borrarCompletados()">Limpiar completado</button>
+</footer>
